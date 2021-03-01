@@ -21,10 +21,9 @@ class AuthController extends Controller
         }
         else{
             return redirect()->back()->with('err_msg','Invalid email or password.');
-        }
-
-       
+        } 
     }
+
     public function dashboard(){
         return view('website.pages.dashboard');
     }
@@ -44,12 +43,9 @@ class AuthController extends Controller
 
     public function teachers(){
         $teachers = Employee::where('role','=','teacher')
-        ->get();
+                    ->get();
 
         return view('teacher.pages.teachers', compact('teachers'));
     }
-
-
-
     
 }

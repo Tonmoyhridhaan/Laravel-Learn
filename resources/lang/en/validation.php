@@ -147,6 +147,9 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        'dob' => 'Date of birth',
+        'email' => 'E-mail address'
+    ],
 
 ];

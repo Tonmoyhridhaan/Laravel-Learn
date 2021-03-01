@@ -5,6 +5,8 @@ use App\Http\Controllers\HistoryController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\LayoutController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\StudentController;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -72,3 +74,10 @@ Route::middleware(['isLoggedIn','isTeacher']) -> group(function(){
     Route::get('teacher-edit/{id}', [EmployeeController::class, 'teacher_edit']);
     Route::get('teachers', [AuthController::class, 'teachers']);
 }); 
+
+
+Route::get('create-student', [StudentController::class,'create']);
+Route::post('store-student', [StudentController::class,'store']);
+
+Route::get('products', [ProductController::class,'all']);
+
