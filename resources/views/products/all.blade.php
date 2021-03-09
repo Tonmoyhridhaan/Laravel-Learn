@@ -52,6 +52,8 @@
 <script src="https://cdn.datatables.net/buttons/1.6.5/js/buttons.html5.min.js"></script>
 <script src="https://cdn.datatables.net/buttons/1.6.5/js/buttons.print.min.js"></script>
 <script src="https://cdn.datatables.net/select/1.3.1/js/dataTables.select.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.6.5/js/buttons.colVis.min.js"></script>
+
 
 
 
@@ -59,29 +61,45 @@
 <script>
 $(document).ready(function() {
     $("#xyz").DataTable({
-        
+
         columnDefs: [{
             bSortable: false, 
             targets: [3,4] 
         }],
+
         dom: 'Bfrtip',
         buttons: [
             'pageLength',
-            'copy',
-            'csv',
-            'excel',
-            'pdf',
             {
-                extend: 'print',
-                text: 'Print all (not just selected)',
+                extend: 'copyHtml5',
                 exportOptions: {
-                    modifier: {
-                        selected: null
-                    }
+                    columns: [ 0, ':visible' ]
                 }
-            }
-        ],
-        select: true
+            },
+            {
+                extend: 'excelHtml5',
+                exportOptions: {
+                    columns: ':visible'
+                }
+            },
+            {
+                extend: 'pdfHtml5',
+                exportOptions: {
+                    columns: [ 0, 1, 2 ]
+                }
+            },
+            'colvis'
+            // {
+            //     extend: 'print',
+            //     text: 'Print all (not just selected)',
+            //     exportOptions: {
+            //         modifier: {
+            //             selected: null
+            //         }
+            //     }
+            // }
+        ]
+        //select: true
     });
 });
 </script>

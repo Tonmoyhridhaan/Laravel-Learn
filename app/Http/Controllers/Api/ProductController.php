@@ -47,4 +47,15 @@ class ProductController extends Controller
             ]);
         }
     }
+
+    public function getProductById($id){
+        $product = DB::table('products')
+            ->where('id','=',$id)
+            ->first();
+        return response()->json([
+            'data' => $product,
+            'error' => false,
+            'msg' => 'Data Retrieved'
+        ]);
+    }
 }

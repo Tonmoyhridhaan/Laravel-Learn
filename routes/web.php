@@ -7,6 +7,7 @@ use App\Http\Controllers\LayoutController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\UploadController;
 
 /*
 |--------------------------------------------------------------------------
@@ -80,4 +81,8 @@ Route::get('create-student', [StudentController::class,'create']);
 Route::post('store-student', [StudentController::class,'store']);
 
 Route::get('products', [ProductController::class,'all']);
+
+#file upload
+Route::get('upload', [UploadController::class,'upload']);
+Route::post('upload-image', [UploadController::class,'uploadImage']);
 
