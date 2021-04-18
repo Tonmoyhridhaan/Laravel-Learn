@@ -17,9 +17,7 @@ class CreateStudentsTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('email');
-            $table->integer('salary');
-            $table->integer('age');
-            $table->date('dob');
+            $table->string('password');
             $table->timestamps();
         });
     }

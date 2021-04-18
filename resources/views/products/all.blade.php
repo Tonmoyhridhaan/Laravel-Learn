@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Products</title>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="//cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css">
@@ -67,9 +67,9 @@ $(document).ready(function() {
             targets: [3,4] 
         }],
 
-        dom: 'Bfrtip',
+        dom: 'Blfrtip',
         buttons: [
-            'pageLength',
+            //'pageLength',
             {
                 extend: 'copyHtml5',
                 exportOptions: {
@@ -85,7 +85,7 @@ $(document).ready(function() {
             {
                 extend: 'pdfHtml5',
                 exportOptions: {
-                    columns: [ 0, 1, 2 ]
+                    columns: [0,1,2]
                 }
             },
             'colvis'
